@@ -9,6 +9,7 @@ import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsAndConditions from './pages/TermsAndConditions';
 import Aboutus from './pages/Aboutus';
 import Pagenotfound from './pages/Pagenotfound';
+import Contactus from './pages/Contactus';
 import { Toaster } from 'react-hot-toast';
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
           <Route path="PrivacyPolicy" element={<PrivacyPolicy />} />
           <Route path="termsandconditions" element={<TermsAndConditions />} />
           <Route path="about" element={<Aboutus />} />
+          <Route path="contact" element={<Contactus />} />
           <Route path="*" element={<Pagenotfound />} />
         </Route>
       </Routes>
