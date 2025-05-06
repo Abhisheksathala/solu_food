@@ -105,13 +105,16 @@ const UserAuthForm = ({ type }) => {
               </label>
             </div>
           )}
-          <div className="text-xs py-2">
-            Your personal data will be used to support your experience throughout this website, to
-            manage access to your account, and for other purposes described in our privacy{' '}
-            <Link to="/policy" className="underline text-purple-500">
-              policy
-            </Link>
-          </div>
+
+          {type === 'signup' && (
+            <div className="text-xs py-2">
+              Your personal data will be used to support your experience throughout this website, to
+              manage access to your account, and for other purposes described in our privacy{' '}
+              <Link to="/PrivacyPolicy" className="underline text-purple-500">
+                policy
+              </Link>
+            </div>
+          )}
 
           {type === 'signup' ? (
             <p className="mt-6 text-gray-400">

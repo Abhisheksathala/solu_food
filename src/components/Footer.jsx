@@ -2,6 +2,7 @@ import React from 'react';
 import { Linkedin, Facebook, Instagram } from 'lucide-react';
 import google from '../assets/266.png';
 import app from '../assets/267.png';
+import { Link } from 'react-router-dom';
 // import { cn } from '@/lib/utils';
 
 const Footer = () => {
@@ -24,10 +25,19 @@ const Footer = () => {
           <div className="space-y-4">
             <h3 className="font-bold text-lg">Know More</h3>
             <ul className="space-y-2">
-              <li className="text-sm hover:underline cursor-pointer">About Us</li>
-              <li className="text-sm hover:underline cursor-pointer">Contact Us</li>
-              <li className="text-sm hover:underline cursor-pointer">Privacy Policy</li>
-              <li className="text-sm hover:underline cursor-pointer">Terms and Conditions</li>
+              <li className="text-sm hover:underline cursor-pointer">
+                <Link to={'/about'}>About Us</Link>
+              </li>
+              <li className="text-sm hover:underline cursor-pointer">
+                <Link to={'/contact'}> Contact Us</Link>
+              </li>
+              <li className="text-sm hover:underline cursor-pointer">
+                <Link to={'/PrivacyPolicy'}>Privacy Policy</Link>
+              </li>
+              <li className="text-sm hover:underline cursor-pointer">
+                <Link to={'/termsandconditions'}></Link>
+                Terms and Conditions
+              </li>
             </ul>
           </div>
 
