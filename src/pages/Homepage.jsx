@@ -5,6 +5,8 @@ import Banner from '../components/Banner';
 import Newproducts from '../components/Newproducts';
 import Bentobox from '../components/Bentobox';
 import Slider from '../components/Slider';
+import BentoboxBottom from '../components/BentoboxBottom';
+import FooterTop from '../components/FooterTop';
 
 const Homepage = () => {
   return (
@@ -15,7 +17,8 @@ const Homepage = () => {
       <Newproducts />
       <Bentobox />
       <Slider />
-      <Bentobox />
+      <BentoboxBottom />
+      <FooterTop />
     </div>
   );
 };

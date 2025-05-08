@@ -10,6 +10,7 @@ import TermsAndConditions from './pages/TermsAndConditions';
 import Aboutus from './pages/Aboutus';
 import Pagenotfound from './pages/Pagenotfound';
 import Contactus from './pages/Contactus';
+import ProductDetails from './components/ProductDetails';
 import { Toaster } from 'react-hot-toast';
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
           <Route path="signin" element={<UserAuthpage type="signin" />} />
           <Route path="signup" element={<UserAuthpage type="signup" />} />
           <Route path="shopretail" element={<Shopretail />} />
+          <Route path="product/:id" element={<ProductDetails />} />
           <Route path="PrivacyPolicy" element={<PrivacyPolicy />} />
           <Route path="termsandconditions" element={<TermsAndConditions />} />
           <Route path="about" element={<Aboutus />} />

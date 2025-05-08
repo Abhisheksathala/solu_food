@@ -1,6 +1,7 @@
 import React from 'react';
 import group from '../assets/Group.png';
 import AboutCard from '../components/AboutCard';
+import { aboutdata } from '../assets/about';
 const Aboutus = () => {
   return (
     <div className="px-9 sm:px-10 md:px-15 ">
@@ -12,10 +13,10 @@ const Aboutus = () => {
         <img src={group} alt="" className="sm:h-9 md:h-12 h-7" />
       </div>
       <div className="flex items-center justify-center gap-2 flex-col">
-        {[1, 2, 3, 4, 5].map((item, index) => {
+        {aboutdata.map((item, index) => {
           return (
             <div className="" key={index}>
-              <AboutCard classname={`${index % 2 === 0 ? 'flex-row-reverse' : ''}`} />
+              <AboutCard item={item} classname={`${index % 2 === 0 ? 'flex-row-reverse' : ''}`} />
             </div>
           );
         })}

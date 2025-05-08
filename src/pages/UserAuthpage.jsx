@@ -124,12 +124,19 @@ const UserAuthForm = ({ type }) => {
               </Link>
             </p>
           ) : (
-            <p className="mt-6 text-gray-400">
-              Don&apos;t have an account?
-              <Link to="/signup" className="underline text-black text-xl ml-1">
-                Sign Up
-              </Link>
-            </p>
+            <>
+              <div className="flex items-center justify-between">
+                <p className="mt-6 text-gray-400">
+                  Don&apos;t have an account?
+                  <Link to="/signup" className="underline text-black text-xl ml-1">
+                    Sign Up
+                  </Link>
+                </p>
+                <div className="text-sm mt-6 text-blue-400 underline capitalize">
+                  Forget password
+                </div>
+              </div>
+            </>
           )}
         </form>
       </section>

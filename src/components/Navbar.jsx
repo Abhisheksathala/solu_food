@@ -14,6 +14,8 @@ import { useNavigate } from 'react-router-dom';
 const Navbar = () => {
   const navigate = useNavigate();
 
+  const [showmore, setShowmore] = React.useState(false);
+
   return (
     <>
       <div className="flex flex-col w-full">
@@ -102,14 +104,37 @@ const Navbar = () => {
               />
             </div>
             <div className="left flex items-center justify-center gap-4 sm:flex-row ">
-              <div className="singin flex items-center justify-center">
-                <Link to={'/myaccount'} className="flex items-center justify-center flex-row">
+              <div className="singin flex items-center justify-center relative">
+                <div
+                  onClick={() => {
+                    setShowmore((prev) => !prev);
+                  }}
+                  className="flex items-center justify-center flex-row cursor-pointer"
+                >
                   <IoPerson className="text-2xl" />
                   <div className="flex flex-col ml-2">
                     <span className="text-xs">Sign in</span>
                     <p className="text-sm font-semibold">Account</p>
                   </div>
-                </Link>
+
+                  <div
+                    className={`flex flex-col items-center justify-center max-w-[650px] px-5 py-5 absolute bg-white border rounded-lg space-y-5 transition-all duration-500 ease-in-out top-16
+                      z-20 ${showmore ? 'block' : 'hidden'}`}
+                  >
+                    <Link to={'/signin'} className="px-4 py-3 border-b hover:bg-gray-100 text-sm">
+                      signin
+                    </Link>
+                    <Link to={'/signup'} className="px-4 pb-3 text-sm border-b hover:bg-gray-100">
+                      signup
+                    </Link>
+                    <Link
+                      to={'/myaccount'}
+                      className="px-2 pb-3 border-b hover:bg-gray-100 text-sm"
+                    >
+                      myAccount
+                    </Link>
+                  </div>
+                </div>
               </div>
               <div className="wishlist relative">
                 <Link to={'/wishlist'}>
@@ -131,7 +156,7 @@ const Navbar = () => {
         <div className="px-4 sm:px-8">
           <div className="bottom px-4 sm:px-8 md:px-12 py-3 flex flex-row justify-between items-center border-b border-gray-400">
             <div className="flex items-start gap-18 w-1/2">
-              {['Home', 'shop retail', 'Blog', 'About us'].map((item, index) => (
+              {['Home', 'shop retail', 'Blog', 'About'].map((item, index) => (
                 <div
                   className="item capitalize flex items-center text-sm sm:text-xs md:text-sm "
                   key={index}
